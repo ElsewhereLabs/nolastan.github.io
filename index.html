@@ -258,6 +258,56 @@
       flex-shrink: 0;
     }
 
+    /* Substack signup */
+    .subscribe {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: baseline;
+      margin-bottom: 28px;
+    }
+
+    .subscribe input[type="email"] {
+      flex: 0 1 260px;
+      min-width: 0;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--ink);
+      background: none;
+      border: none;
+      border-bottom: 1px solid var(--rule);
+      padding: 6px 0;
+      transition: border-color 0.15s;
+    }
+
+    .subscribe input[type="email"]::placeholder { color: var(--ink-faint); }
+
+    .subscribe input[type="email"]:focus {
+      outline: none;
+      border-bottom-color: var(--accent);
+    }
+
+    .subscribe button {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      background: none;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 7px 14px;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .subscribe button:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
     /* Footer */
     footer {
       margin-top: 80px;
@@ -587,6 +637,10 @@
 
     <section>
       <p class="section-label">Writing</p>
+      <form class="subscribe" action="https://nolastan.substack.com/api/v1/free?nojs=true" method="post">
+        <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
       <ul class="writing-list">
         <!-- Posts below are synced from Substack by .github/workflows/update-substack.yml. Don't edit by hand. -->
         <!-- substack:start -->
