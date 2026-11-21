@@ -143,30 +143,32 @@
 
     .sizes dd { color: var(--ink); }
 
-    .books { display: flex; flex-direction: column; gap: 32px; }
-
-    .book {
+    .books {
       display: grid;
-      grid-template-columns: 88px 1fr;
-      gap: 20px;
-      align-items: start;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px 24px;
     }
 
+    .book { display: flex; flex-direction: column; }
+
     .cover {
-      width: 88px;
+      width: 100%;
       aspect-ratio: 2 / 3;
       background: #ebe8e0;
       border: 1px solid var(--rule);
-      border-radius: 2px;
+      border-radius: 3px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      font-size: 0.7rem;
+      font-size: 0.85rem;
+      font-style: italic;
       line-height: 1.3;
       color: var(--ink-light);
-      padding: 6px;
+      padding: 12px;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 2px rgba(26, 26, 24, 0.06), 0 6px 16px rgba(26, 26, 24, 0.08);
       overflow-wrap: anywhere;
       hyphens: auto;
     }
@@ -182,37 +184,117 @@
 
     .book-title {
       font-weight: 500;
-      font-size: 0.98rem;
+      font-size: 0.9rem;
       font-style: italic;
       color: var(--ink);
-      line-height: 1.4;
+      line-height: 1.35;
+      margin-bottom: 2px;
+    }
+
+    .book-series {
+      font-size: 0.78rem;
+      color: var(--ink-light);
+      font-style: normal;
+      font-weight: 400;
     }
 
     .book-author {
-      font-size: 0.88rem;
+      font-size: 0.8rem;
       color: var(--ink-light);
+      line-height: 1.4;
       margin-bottom: 10px;
     }
 
     .book-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 5px;
+      margin-top: auto;
     }
 
     .book-links a {
       font-family: 'DM Mono', monospace;
-      font-size: 0.66rem;
+      font-size: 0.58rem;
       font-weight: 400;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--ink-light);
       border: 1px solid var(--rule);
       border-radius: 4px;
-      padding: 5px 10px;
+      padding: 3px 5px;
     }
 
     .book-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+    .gift-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    a.gift-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      aspect-ratio: 1.586 / 1;
+      padding: 18px 20px;
+      border: none;
+      border-radius: 14px;
+      color: #fff;
+      overflow: hidden;
+      background: var(--card, var(--ink));
+      background-image:
+        radial-gradient(circle at 110% -10%, rgba(255, 255, 255, 0.22) 0 38%, transparent 38.5%),
+        radial-gradient(circle at 115% 120%, rgba(0, 0, 0, 0.14) 0 45%, transparent 45.5%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.10), rgba(0, 0, 0, 0.12));
+      box-shadow: 0 1px 2px rgba(26, 26, 24, 0.10), 0 8px 20px rgba(26, 26, 24, 0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    a.gift-card:hover {
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 2px 4px rgba(26, 26, 24, 0.12), 0 14px 28px rgba(26, 26, 24, 0.18);
+    }
+
+    .gc-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .gc-name {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 500;
+      font-size: 1.08rem;
+      line-height: 1.25;
+    }
+
+    .gc-chip {
+      flex-shrink: 0;
+      width: 30px;
+      height: 23px;
+      border-radius: 5px;
+      background: linear-gradient(135deg, #e9d9a6, #c9b273);
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+    }
+
+    .gc-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 12px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .gc-kind { font-weight: 400; }
+    .gc-detail { font-weight: 300; text-align: right; }
 
     .books-note {
       font-size: 0.93rem;
@@ -254,8 +336,8 @@
     @media (max-width: 480px) {
       html { font-size: 16px; }
       .site { padding: 48px 0 80px; }
-      .book { grid-template-columns: 72px 1fr; gap: 16px; }
-      .cover { width: 72px; }
+      .books { grid-template-columns: repeat(2, 1fr); gap: 28px 18px; }
+      .gift-cards { grid-template-columns: 1fr; gap: 16px; }
     }
   </style>
 </head>
@@ -349,7 +431,7 @@
         <div class="book">
           <div class="cover has-img"><img src="https://images-us.bookshop.org/ingram/9780316334716.jpg?width=600" alt="Cover of Nemesis Games" loading="lazy" /></div>
           <div>
-            <p class="book-title">Nemesis Games <span class="item-note">(The Expanse, Book 5)</span></p>
+            <p class="book-title">Nemesis Games <span class="book-series">(The Expanse, Book 5)</span></p>
             <p class="book-author">James S. A. Corey</p>
             <div class="book-links">
               <a href="https://www.hachettebookgroup.com/titles/james-s-a-corey/nemesis-games/9780316334716/" target="_blank">Publisher</a>
@@ -405,12 +487,32 @@
 
     <section>
       <p class="section-label">Gift cards</p>
-      <ul class="item-list">
-        <li><a href="https://rainbow.coop/gift-cards/" target="_blank">Rainbow Grocery</a></li>
-        <li><a href="https://www.mspasf.com/gift-certificates" target="_blank">M Spa</a></li>
-        <li>Clothing: <a href="https://industryofallnations.com/products/gift-card" target="_blank">Industry of All Nations</a>, <a href="https://fahertybrand.com/products/copy-of-faherty-e-gift-card-good-vibes-for-all" target="_blank">Faherty</a>, <a href="https://buffaloexchange.com/gift-cards/" target="_blank">Buffalo Exchange</a></li>
-        <li><a href="https://connect.clickandpledge.com/w/Form/3d90f6e5-e67a-439a-a6e8-e95043fa0fc4" target="_blank">Gift membership to SF Bike Coalition</a></li>
-      </ul>
+      <div class="gift-cards">
+        <a class="gift-card" href="https://rainbow.coop/gift-cards/" target="_blank" style="--card: #5e7a4e;">
+          <div class="gc-top"><span class="gc-name">Rainbow Grocery</span><span class="gc-chip" aria-hidden="true"></span></div>
+          <div class="gc-bottom"><span class="gc-kind">Gift card</span><span class="gc-detail">Groceries</span></div>
+        </a>
+        <a class="gift-card" href="https://www.mspasf.com/gift-certificates" target="_blank" style="--card: #8a6a8c;">
+          <div class="gc-top"><span class="gc-name">M Spa</span><span class="gc-chip" aria-hidden="true"></span></div>
+          <div class="gc-bottom"><span class="gc-kind">Gift certificate</span><span class="gc-detail">Spa</span></div>
+        </a>
+        <a class="gift-card" href="https://industryofallnations.com/products/gift-card" target="_blank" style="--card: #b0773a;">
+          <div class="gc-top"><span class="gc-name">Industry of All Nations</span><span class="gc-chip" aria-hidden="true"></span></div>
+          <div class="gc-bottom"><span class="gc-kind">Gift card</span><span class="gc-detail">Clothing</span></div>
+        </a>
+        <a class="gift-card" href="https://fahertybrand.com/products/copy-of-faherty-e-gift-card-good-vibes-for-all" target="_blank" style="--card: #3f5f7a;">
+          <div class="gc-top"><span class="gc-name">Faherty</span><span class="gc-chip" aria-hidden="true"></span></div>
+          <div class="gc-bottom"><span class="gc-kind">Gift card</span><span class="gc-detail">Clothing</span></div>
+        </a>
+        <a class="gift-card" href="https://buffaloexchange.com/gift-cards/" target="_blank" style="--card: #c85a2a;">
+          <div class="gc-top"><span class="gc-name">Buffalo Exchange</span><span class="gc-chip" aria-hidden="true"></span></div>
+          <div class="gc-bottom"><span class="gc-kind">Gift card</span><span class="gc-detail">Clothing</span></div>
+        </a>
+        <a class="gift-card" href="https://connect.clickandpledge.com/w/Form/3d90f6e5-e67a-439a-a6e8-e95043fa0fc4" target="_blank" style="--card: #2f2f2b;">
+          <div class="gc-top"><span class="gc-name">SF Bike Coalition</span><span class="gc-chip" aria-hidden="true"></span></div>
+          <div class="gc-bottom"><span class="gc-kind">Gift membership</span><span class="gc-detail">Bikes</span></div>
+        </a>
+      </div>
     </section>
 
     <footer>
