@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wishlist · Stanford Rosenthal</title>
+  <meta name="description" content="Gift ideas for Stanford Rosenthal: things he always needs more of, sizes, books, and gift cards." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.usefathom.com/script.js" data-site="LNCMNOOM" defer></script>
+  <style>
+    :root {
+      --ink: #1a1a18;
+      --ink-light: #5a5a52;
+      --ink-faint: #9a9a90;
+      --paper: #f7f5f0;
+      --accent: #c85a2a;
+      --rule: #dddbd4;
+      --max: 640px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 17px; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Lora', Georgia, serif;
+      line-height: 1.75;
+      padding: 0 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .site {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 72px 0 120px;
+    }
+
+    .back {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--ink-faint);
+      letter-spacing: 0.04em;
+      display: inline-block;
+      margin-bottom: 40px;
+      border-bottom: none;
+    }
+
+    header {
+      margin-bottom: 64px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 500;
+      font-size: 1.5rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-family: 'DM Mono', monospace;
+      font-weight: 300;
+      font-size: 0.78rem;
+      color: var(--ink-light);
+      letter-spacing: 0.04em;
+    }
+
+    section {
+      margin-bottom: 56px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    section:nth-of-type(2) { animation-delay: 0.08s; }
+    section:nth-of-type(3) { animation-delay: 0.14s; }
+    section:nth-of-type(4) { animation-delay: 0.20s; }
+    section:nth-of-type(5) { animation-delay: 0.26s; }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 20px;
+    }
+
+    em { font-style: italic; color: var(--ink); }
+
+    .item-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .item-list li {
+      font-size: 0.95rem;
+      color: var(--ink);
+      line-height: 1.6;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .item-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--ink-faint);
+    }
+
+    .item-note {
+      font-size: 0.85rem;
+      color: var(--ink-light);
+    }
+
+    .sizes {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      column-gap: 24px;
+      row-gap: 8px;
+      font-size: 0.93rem;
+    }
+
+    .sizes dt {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: var(--ink-faint);
+      padding-top: 3px;
+    }
+
+    .sizes dd { color: var(--ink); }
+
+    .books { display: flex; flex-direction: column; gap: 32px; }
+
+    .book {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .cover {
+      width: 88px;
+      aspect-ratio: 2 / 3;
+      background: #ebe8e0;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.7rem;
+      line-height: 1.3;
+      color: var(--ink-light);
+      padding: 6px;
+      overflow-wrap: anywhere;
+      hyphens: auto;
+    }
+
+    .cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cover.has-img { padding: 0; }
+
+    .book-title {
+      font-weight: 500;
+      font-size: 0.98rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    .book-author {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      margin-bottom: 10px;
+    }
+
+    .book-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .book-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.66rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 5px 10px;
+    }
+
+    .book-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+    .books-note {
+      font-size: 0.93rem;
+      color: var(--ink-light);
+      margin-bottom: 28px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 0 0 56px;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--ink-faint);
+    }
+
+    footer a { color: var(--ink-faint); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: color 0.15s, border-color 0.15s;
+    }
+    a:hover { color: var(--accent); border-color: var(--accent); }
+
+    @media (max-width: 480px) {
+      html { font-size: 16px; }
+      .site { padding: 48px 0 80px; }
+      .book { grid-template-columns: 72px 1fr; gap: 16px; }
+      .cover { width: 72px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+
+    <a class="back" href="/">← Stanford Rosenthal</a>
+
+    <header>
+      <h1>Wishlist</h1>
+      <p class="tagline">Gift ideas, sizes, and books I&rsquo;d love to read</p>
+    </header>
+
+    <section>
+      <p class="section-label">Things I always need more of</p>
+      <ul class="item-list">
+        <li>Nickel-free jewelry</li>
+        <li>Japanese whiskey</li>
+        <li>Rihaku &ldquo;Dreamy Clouds&rdquo; Nigori Sake</li>
+        <li><a href="https://welcometowondervalley.com/products/rosemary-hair-oil" target="_blank">Rosemary Hair Oil</a> <span class="item-note">from Wonder Valley</span></li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section>
+      <p class="section-label">Clothing sizes</p>
+      <dl class="sizes">
+        <dt>Jacket</dt><dd>36R slim</dd>
+        <dt>Shirt</dt><dd>Neck 15, sleeve 34 (or XS)</dd>
+        <dt>Pants</dt><dd>Small / 30x32, tailored, skinny, or slim</dd>
+        <dt>Shoes</dt><dd>9.5</dd>
+        <dt>Wrist</dt><dd>M, 7&#8539;&ndash;7&frac12;&Prime;</dd>
+      </dl>
+    </section>
+
+    <hr />
+
+    <section>
+      <p class="section-label">Garden</p>
+      <ul class="item-list">
+        <li><a href="https://www.evehome.com/en/eve-aqua" target="_blank">Eve Aqua</a> <span class="item-note">smart water controller</span></li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section>
+      <p class="section-label">Books</p>
+      <p class="books-note">Any book by Neal Stephenson, plus:</p>
+      <div class="books">
+
+        <div class="book">
+          <div class="cover">Analog</div>
+          <div>
+            <p class="book-title">Analog</p>
+            <p class="book-author">Chris Schultz</p>
+            <div class="book-links">
+              <a href="https://cschultz.substack.com/about" target="_blank">Author</a>
+              <a href="https://a.co/d/02mvfbDd" target="_blank">Amazon</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="book">
+          <div class="cover has-img"><img src="https://secure-ecsd.elsevier.com/covers/80/Tango2/largest/9780128035207.jpg" alt="Cover of The Craft and Science of Coffee" loading="lazy" /></div>
+          <div>
+            <p class="book-title">The Craft and Science of Coffee</p>
+            <p class="book-author">Edited by Britta Folmer</p>
+            <div class="book-links">
+              <a href="https://shop.elsevier.com/books/the-craft-and-science-of-coffee/folmer/978-0-12-803520-7" target="_blank">Publisher</a>
+              <a href="https://bookshop.org/p/books/the-craft-and-science-of-coffee-britta-folmer/0f890bf07f32c0a1?ean=9780128035207" target="_blank">Bookshop</a>
+              <a href="https://www.amazon.com/dp/012803520X" target="_blank">Amazon</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="book">
+          <div class="cover has-img"><img src="https://benbellabooks.com/wp-content/uploads/2025/10/start-in-your-own-backyard.jpg" alt="Cover of Start in Your Own Backyard" loading="lazy" /></div>
+          <div>
+            <p class="book-title">Start in Your Own Backyard</p>
+            <p class="book-author">Steve Nygren</p>
+            <div class="book-links">
+              <a href="https://benbellabooks.com/shop/start-in-your-own-backyard/" target="_blank">Publisher</a>
+              <a href="https://bookshop.org/p/books/start-in-your-own-backyard-transforming-where-we-live-with-radical-common-sense-steve-nygren/176c9c9e9ebf75b6?ean=9781637747438" target="_blank">Bookshop</a>
+              <a href="https://www.amazon.com/dp/1637747438" target="_blank">Amazon</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="book">
+          <div class="cover has-img"><img src="https://images-us.bookshop.org/ingram/9780316334716.jpg?width=600" alt="Cover of Nemesis Games" loading="lazy" /></div>
+          <div>
+            <p class="book-title">Nemesis Games <span class="item-note">(The Expanse, Book 5)</span></p>
+            <p class="book-author">James S. A. Corey</p>
+            <div class="book-links">
+              <a href="https://www.hachettebookgroup.com/titles/james-s-a-corey/nemesis-games/9780316334716/" target="_blank">Publisher</a>
+              <a href="https://bookshop.org/p/books/nemesis-games-james-s-a-corey/c3f6ee970f893e8f?ean=9780316334716" target="_blank">Bookshop</a>
+              <a href="https://www.amazon.com/dp/0316334715" target="_blank">Amazon</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="book">
+          <div class="cover has-img"><img src="https://images-us.bookshop.org/ingram/9781771642743.jpg?width=600" alt="Cover of The Vegetarian's Guide to Eating Meat" loading="lazy" /></div>
+          <div>
+            <p class="book-title">The Vegetarian&rsquo;s Guide to Eating Meat</p>
+            <p class="book-author">Marissa Landrigan</p>
+            <div class="book-links">
+              <a href="https://greystonebooks.com/products/the-vegetarians-guide-to-eating-meat" target="_blank">Publisher</a>
+              <a href="https://bookshop.org/p/books/the-vegetarian-s-guide-to-eating-meat-a-young-woman-s-search-for-ethical-food-marissa-landrigan/f9db024d3f7bfc84" target="_blank">Bookshop</a>
+              <a href="https://www.amazon.com/dp/1771642742" target="_blank">Amazon</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="book">
+          <div class="cover has-img"><img src="https://images-us.bookshop.org/ingram/9781933820668.jpg?width=600" alt="Cover of Writing Is Designing" loading="lazy" /></div>
+          <div>
+            <p class="book-title">Writing Is Designing</p>
+            <p class="book-author">Michael J. Metts and Andy Welfle</p>
+            <div class="book-links">
+              <a href="https://rosenfeldmedia.com/books/writing-is-designing/" target="_blank">Publisher</a>
+              <a href="https://bookshop.org/p/books/writing-is-designing-words-and-the-user-experience-andy-welfle/78df4057012288d5?ean=9781933820668" target="_blank">Bookshop</a>
+              <a href="https://www.amazon.com/dp/1933820667" target="_blank">Amazon</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="book">
+          <div class="cover has-img"><img src="https://images-us.bookshop.org/ingram/9781786789792.jpg?width=600" alt="Cover of The Joyful Environmentalist" loading="lazy" /></div>
+          <div>
+            <p class="book-title">The Joyful Environmentalist</p>
+            <p class="book-author">Isabel Losada</p>
+            <div class="book-links">
+              <a href="https://penguinrandomhouse.com/books/782933/the-joyful-environmentalist-revised-and-updated-2nd-edition--with-new-material-by-isabel-losada" target="_blank">Publisher</a>
+              <a href="https://bookshop.org/p/books/the-joyful-environmentalist-revised-and-updated-2nd-edition-with-new-material-how-to-practise-without-preaching-isabel-losada/9afab6ffb9cd16a5?ean=9781786789792" target="_blank">Bookshop</a>
+              <a href="https://www.amazon.com/dp/1786789795" target="_blank">Amazon</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr />
+
+    <section>
+      <p class="section-label">Gift cards</p>
+      <ul class="item-list">
+        <li><a href="https://rainbow.coop/gift-cards/" target="_blank">Rainbow Grocery</a></li>
+        <li><a href="https://www.mspasf.com/gift-certificates" target="_blank">M Spa</a></li>
+        <li>Clothing: <a href="https://industryofallnations.com/products/gift-card" target="_blank">Industry of All Nations</a>, <a href="https://fahertybrand.com/products/copy-of-faherty-e-gift-card-good-vibes-for-all" target="_blank">Faherty</a>, <a href="https://buffaloexchange.com/gift-cards/" target="_blank">Buffalo Exchange</a></li>
+        <li><a href="https://connect.clickandpledge.com/w/Form/3d90f6e5-e67a-439a-a6e8-e95043fa0fc4" target="_blank">Gift membership to SF Bike Coalition</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      © Stanford Rosenthal · <a href="/">Home</a>
+    </footer>
+
+  </div>
+  <script>
+    // If a cover fails to load, fall back to a plain title card.
+    document.querySelectorAll('.cover img').forEach(function (img) {
+      function fallback() {
+        var cover = img.parentNode;
+        if (!cover) return;
+        cover.classList.remove('has-img');
+        cover.textContent = img.alt.replace(/^Cover of /, '');
+      }
+      if (img.complete && img.naturalWidth === 0) fallback();
+      else img.addEventListener('error', fallback);
+    });
+  </script>
+</body>
+</html>
