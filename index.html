@@ -209,6 +209,67 @@
       line-height: 1.7;
     }
 
+    /* Work screenshots */
+    .work-shots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .work-shots a {
+      display: block;
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      overflow: hidden;
+      line-height: 0;
+      background: #fff;
+      transition: border-color 0.15s;
+    }
+
+    .work-shots a:hover { border-color: var(--accent); }
+
+    .work-shots img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: opacity 0.15s;
+    }
+
+    .work-shots a:hover img { opacity: 0.85; }
+
+    /* Screenshot lightbox */
+    .lightbox {
+      border: none;
+      padding: 0;
+      background: transparent;
+      max-width: min(1100px, 92vw);
+      max-height: 92vh;
+      margin: auto;
+    }
+
+    .lightbox::backdrop { background: rgba(26, 26, 24, 0.82); }
+
+    .lightbox img {
+      display: block;
+      max-width: 100%;
+      max-height: calc(92vh - 60px);
+      margin: 0 auto;
+      border-radius: 6px;
+    }
+
+    .lightbox p {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--paper);
+      text-align: center;
+      line-height: 1.6;
+      padding: 12px 8px 0;
+    }
+
     /* Rule */
     hr {
       border: none;
@@ -549,6 +610,7 @@
       html { font-size: 16px; }
       .site { padding: 56px 0 80px; }
       .entry-header { flex-direction: column; gap: 2px; }
+      .work-shots { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -601,6 +663,9 @@
             <span class="entry-date">2025 — present</span>
           </div>
           <p class="entry-desc">Design Engineer working on in-house products to support researchers. Designed a grant selection form that one researcher called <a href="https://x.com/Mishok2000/status/1937453558254747662" target="_blank">"the best UI for choosing research support in the investment world."</a></p>
+          <div class="work-shots">
+            <a href="images/work/laude.webp" target="_blank" data-caption="Grant selection form for Laude Institute: applicants see what support is available while the institute learns what researchers need."><img src="images/work/laude-thumb.webp" alt="Grant selection form for Laude Institute: applicants see what support is available while the institute learns what researchers need." loading="lazy" /></a>
+          </div>
         </div>
         <div class="entry">
           <div class="entry-header">
@@ -608,6 +673,12 @@
             <span class="entry-date">2024 — 2025</span>
           </div>
           <p class="entry-desc">Sole designer for a compliance platform helping companies operate across all 50 states. Led design for the rollout of the Tasks Framework — establishing consistent task and status components across the product — and redesigned the user dashboard around a location-first navigation model.</p>
+          <div class="work-shots">
+            <a href="images/work/mosey-resolver.webp" target="_blank" data-caption="The Resolver, where work gets done in Mosey: resolving compliance tasks and using Mosey&rsquo;s automations."><img src="images/work/mosey-resolver-thumb.webp" alt="The Resolver, where work gets done in Mosey: resolving compliance tasks and using Mosey&rsquo;s automations." loading="lazy" /></a>
+            <a href="images/work/mosey-statuses.webp" target="_blank" data-caption="Task status components in pill and round formats, establishing a consistent way to show actions and statuses."><img src="images/work/mosey-statuses-thumb.webp" alt="Task status components in pill and round formats, establishing a consistent way to show actions and statuses." loading="lazy" /></a>
+            <a href="images/work/mosey-task-card.webp" target="_blank" data-caption="The Task card: a consistent representation customers instantly recognize, wherever tasks appear."><img src="images/work/mosey-task-card-thumb.webp" alt="The Task card: a consistent representation customers instantly recognize, wherever tasks appear." loading="lazy" /></a>
+            <a href="images/work/mosey-home.webp" target="_blank" data-caption="Redesigned homepage: to-do tasks get primary real estate, with location filters along the top."><img src="images/work/mosey-home-thumb.webp" alt="Redesigned homepage: to-do tasks get primary real estate, with location filters along the top." loading="lazy" /></a>
+          </div>
         </div>
         <div class="entry">
           <div class="entry-header">
@@ -615,6 +686,10 @@
             <span class="entry-date">2022 — 2024</span>
           </div>
           <p class="entry-desc">Created the brand and designed UX for an upskilling marketplace connecting employers with new talent in clean energy, HVAC/electric, and manufacturing industries.</p>
+          <div class="work-shots">
+            <a href="images/work/upsmith-1.webp" target="_blank" data-caption="UpSmith candidate profile."><img src="images/work/upsmith-1-thumb.webp" alt="UpSmith candidate profile." loading="lazy" /></a>
+            <a href="images/work/upsmith-2.webp" target="_blank" data-caption="UpSmith Employer team ratings."><img src="images/work/upsmith-2-thumb.webp" alt="UpSmith Employer team ratings." loading="lazy" /></a>
+          </div>
         </div>
         <div class="entry">
           <div class="entry-header">
@@ -622,6 +697,12 @@
             <span class="entry-date">2018 — 2021</span>
           </div>
           <p class="entry-desc">Head of Academics. Created the UX Design curriculum, ranked #1 by Course Report. Led a team of 45, met daily with the executive team, and prepared materials for potential investors and acquirers as the company was acquired by SNHU.</p>
+          <div class="work-shots">
+            <a href="images/work/kenzie-1.webp" target="_blank" data-caption="UX Design curriculum: empty state do&rsquo;s and don&rsquo;ts."><img src="images/work/kenzie-1-thumb.webp" alt="UX Design curriculum: empty state do&rsquo;s and don&rsquo;ts." loading="lazy" /></a>
+            <a href="images/work/kenzie-2.webp" target="_blank" data-caption="UX Design curriculum: content-first navigation."><img src="images/work/kenzie-2-thumb.webp" alt="UX Design curriculum: content-first navigation." loading="lazy" /></a>
+            <a href="images/work/kenzie-3.webp" target="_blank" data-caption="UX Design curriculum: ideal vs. partial states."><img src="images/work/kenzie-3-thumb.webp" alt="UX Design curriculum: ideal vs. partial states." loading="lazy" /></a>
+            <a href="images/work/kenzie-4.webp" target="_blank" data-caption="UX Design curriculum: decision points in flows."><img src="images/work/kenzie-4-thumb.webp" alt="UX Design curriculum: decision points in flows." loading="lazy" /></a>
+          </div>
         </div>
         <div class="entry">
           <div class="entry-header">
@@ -629,6 +710,10 @@
             <span class="entry-date">2015 — 2017</span>
           </div>
           <p class="entry-desc">Created the brand and designed onboarding for a medical bill review startup that corrected errors, caught overcharges, and negotiated with hospitals to save patients money.</p>
+          <div class="work-shots">
+            <a href="images/work/remedy-1.webp" target="_blank" data-caption="Remedy onboarding: connecting an insurance portal."><img src="images/work/remedy-1-thumb.webp" alt="Remedy onboarding: connecting an insurance portal." loading="lazy" /></a>
+            <a href="images/work/remedy-2.webp" target="_blank" data-caption="Remedy onboarding: tailoring the experience."><img src="images/work/remedy-2-thumb.webp" alt="Remedy onboarding: tailoring the experience." loading="lazy" /></a>
+          </div>
         </div>
         <p class="earlier">Earlier: LinkedIn, TaskRabbit, SaveUp, Code for America.</p>
       </div>
@@ -905,6 +990,28 @@
 
     // Fetch posts when page loads
     fetchLatestBlueskyPosts();
+  </script>
+  <dialog class="lightbox" id="lightbox">
+    <img alt="" />
+    <p></p>
+  </dialog>
+  <script>
+    (function () {
+      var box = document.getElementById('lightbox');
+      if (!box || !box.showModal) return;
+      var img = box.querySelector('img');
+      var cap = box.querySelector('p');
+      document.querySelectorAll('.work-shots a').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          img.src = a.getAttribute('href');
+          img.alt = a.querySelector('img').alt;
+          cap.innerHTML = a.getAttribute('data-caption') || '';
+          box.showModal();
+        });
+      });
+      box.addEventListener('click', function () { box.close(); });
+    })();
   </script>
 </body>
 </html>
