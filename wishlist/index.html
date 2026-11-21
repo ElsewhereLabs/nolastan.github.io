@@ -82,6 +82,7 @@
     section:nth-of-type(3) { animation-delay: 0.14s; }
     section:nth-of-type(4) { animation-delay: 0.20s; }
     section:nth-of-type(5) { animation-delay: 0.26s; }
+    section:nth-of-type(n+6) { animation-delay: 0.32s; }
 
     .section-label {
       font-family: 'DM Mono', monospace;
@@ -296,6 +297,101 @@
     .gc-kind { font-weight: 400; }
     .gc-detail { font-weight: 300; text-align: right; }
 
+    .admired-intro {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .admired { display: flex; flex-direction: column; gap: 20px; }
+
+    a.admired-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      overflow: hidden;
+      color: var(--ink);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    a.admired-item:hover {
+      color: var(--ink);
+      border-color: var(--rule);
+      transform: translateY(-2px);
+      box-shadow: 0 2px 4px rgba(26, 26, 24, 0.06), 0 12px 24px rgba(26, 26, 24, 0.10);
+    }
+
+    .admired-photo {
+      background: #efede7;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+
+    .admired-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .admired-body {
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .admired-maker {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 4px;
+    }
+
+    .admired-name {
+      font-weight: 500;
+      font-size: 1.1rem;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .admired-desc {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .admired-tags {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .admired-tags span {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      background: var(--paper);
+      border-radius: 99px;
+      padding: 3px 9px;
+    }
+
     .books-note {
       font-size: 0.93rem;
       color: var(--ink-light);
@@ -338,6 +434,9 @@
       .site { padding: 48px 0 80px; }
       .books { grid-template-columns: repeat(2, 1fr); gap: 28px 18px; }
       .gift-cards { grid-template-columns: 1fr; gap: 16px; }
+      a.admired-item { grid-template-columns: 1fr; }
+      .admired-photo { aspect-ratio: 4 / 3; }
+      .admired-body { padding: 18px 20px; }
     }
   </style>
 </head>
@@ -515,6 +614,42 @@
       </div>
     </section>
 
+    <hr />
+
+    <section>
+      <p class="section-label">Admired from afar</p>
+      <p class="admired-intro">Not a wishlist so much as a list of things I think are beautifully made. Nobody needs to buy me these, but they&rsquo;re a good example of the design and sustainability I find inspiring.</p>
+      <div class="admired">
+        <a class="admired-item" href="https://www.pilaenergy.com/products/mesh-home-battery" target="_blank">
+          <div class="admired-photo"><img src="https://www.pilaenergy.com/cdn/shop/files/PilaMB16-white-greyBG-2048.jpg?v=1777694324" alt="Pila Mesh Home Battery" data-fallback="Pila Energy" loading="lazy" /></div>
+          <div class="admired-body">
+            <p class="admired-maker">Pila Energy</p>
+            <p class="admired-name">Mesh Home Battery</p>
+            <p class="admired-desc">A compact 1.6&nbsp;kWh home battery with smart energy control. Backup power that looks like it belongs in the living room, not the garage.</p>
+            <div class="admired-tags"><span>Clean energy</span><span>Design</span></div>
+          </div>
+        </a>
+        <a class="admired-item" href="https://copperhome.com/products/new-charlie" target="_blank">
+          <div class="admired-photo"><img src="https://copperhome.com/cdn/shop/files/stainless-black-straight-no-kettle-NEW-3x4_f70d4f69-dba2-4f7d-a1e0-1861427666d5.webp?v=1791493875" alt="Copper Charlie induction range" data-fallback="Copper" loading="lazy" /></div>
+          <div class="admired-body">
+            <p class="admired-maker">Copper</p>
+            <p class="admired-name">Charlie</p>
+            <p class="admired-desc">A battery-equipped induction range that plugs into a regular 120&nbsp;V outlet, making it far easier to swap a gas stove for electric.</p>
+            <div class="admired-tags"><span>Electrification</span><span>Cooking</span></div>
+          </div>
+        </a>
+        <a class="admired-item" href="https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/" target="_blank">
+          <div class="admired-photo"><img src="https://marketplace.nvidia.com/developer/_next/static/media/dgx-spark.b8400a71.jpg" alt="NVIDIA DGX Spark" data-fallback="NVIDIA" loading="lazy" /></div>
+          <div class="admired-body">
+            <p class="admired-maker">NVIDIA</p>
+            <p class="admired-name">DGX Spark</p>
+            <p class="admired-desc">A Grace Blackwell AI supercomputer small enough for a desk, with 128&nbsp;GB of unified memory for running large models locally.</p>
+            <div class="admired-tags"><span>AI</span><span>Hardware</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
     <footer>
       © Stanford Rosenthal · <a href="/">Home</a>
     </footer>
@@ -528,6 +663,15 @@
         if (!cover) return;
         cover.classList.remove('has-img');
         cover.textContent = img.alt.replace(/^Cover of /, '');
+      }
+      if (img.complete && img.naturalWidth === 0) fallback();
+      else img.addEventListener('error', fallback);
+    });
+    // Same for product photos: show the maker's name instead.
+    document.querySelectorAll('.admired-photo img').forEach(function (img) {
+      function fallback() {
+        var box = img.parentNode;
+        if (box) box.textContent = img.getAttribute('data-fallback');
       }
       if (img.complete && img.naturalWidth === 0) fallback();
       else img.addEventListener('error', fallback);
