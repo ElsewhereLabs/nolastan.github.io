@@ -1008,13 +1008,24 @@
       document.querySelectorAll('.work-shots a').forEach(function (a) {
         a.addEventListener('click', function (e) {
           e.preventDefault();
-          img.src = a.getAttribute('href');
-          img.alt = a.querySelector('img').alt;
+          var thumb = a.querySelector('img');
+          var full = a.getAttribute('href');
+          // Show the cached thumbnail right away, then swap in the full image once it loads
+          img.src = thumb.currentSrc || thumb.src;
+          img.alt = thumb.alt;
+          var loader = new Image();
+          loader.onload = function () { if (box.open && box.dataset.current === full) img.src = full; };
+          box.dataset.current = full;
+          loader.src = full;
           cap.innerHTML = a.getAttribute('data-caption') || '';
           box.showModal();
         });
       });
       box.addEventListener('click', function () { box.close(); });
+      box.addEventListener('close', function () {
+        img.removeAttribute('src');
+        delete box.dataset.current;
+      });
     })();
   </script>
 </body>
