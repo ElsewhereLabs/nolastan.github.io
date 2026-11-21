@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Podcast Guest · Stanford Rosenthal</title>
+  <meta name="description" content="Topics, past appearances, and how to invite Stanford Rosenthal on your podcast." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.usefathom.com/script.js" data-site="LNCMNOOM" defer></script>
+  <style>
+    :root {
+      --ink: #1a1a18;
+      --ink-light: #5a5a52;
+      --ink-faint: #9a9a90;
+      --paper: #f7f5f0;
+      --accent: #c85a2a;
+      --rule: #dddbd4;
+      --max: 640px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 17px; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Lora', Georgia, serif;
+      line-height: 1.75;
+      padding: 0 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .site {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 72px 0 120px;
+    }
+
+    .back {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--ink-faint);
+      letter-spacing: 0.04em;
+      display: inline-block;
+      margin-bottom: 40px;
+      border-bottom: none;
+    }
+
+    header {
+      margin-bottom: 64px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 500;
+      font-size: 1.5rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-family: 'DM Mono', monospace;
+      font-weight: 300;
+      font-size: 0.78rem;
+      color: var(--ink-light);
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+    }
+
+    section {
+      margin-bottom: 56px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    section:nth-of-type(2) { animation-delay: 0.08s; }
+    section:nth-of-type(3) { animation-delay: 0.14s; }
+    section:nth-of-type(4) { animation-delay: 0.20s; }
+    section:nth-of-type(5) { animation-delay: 0.26s; }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 20px;
+    }
+
+    .bio-intro {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+
+    .bio-body p {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      margin-bottom: 16px;
+      line-height: 1.85;
+    }
+
+    .bio-body p:last-child { margin-bottom: 0; }
+
+    em { font-style: italic; color: var(--ink); }
+
+    .entries { display: flex; flex-direction: column; gap: 24px; }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+
+    .entry-name {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+
+    .entry-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--ink-faint);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .entry-desc {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      line-height: 1.7;
+    }
+
+    .question-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .question-list li {
+      font-size: 0.93rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .question-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--ink-faint);
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 8px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 9px 16px;
+    }
+
+    .cta:hover { color: var(--accent); border-color: var(--accent); }
+
+    .contact-note {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 0 0 56px;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--ink-faint);
+    }
+
+    footer a { color: var(--ink-faint); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: color 0.15s, border-color 0.15s;
+    }
+    a:hover { color: var(--accent); border-color: var(--accent); }
+
+    @media (max-width: 480px) {
+      html { font-size: 16px; }
+      .site { padding: 48px 0 80px; }
+      .entry-header { flex-direction: column; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+
+    <a class="back" href="/">← Stanford Rosenthal</a>
+
+    <header>
+      <h1>Have me on your podcast</h1>
+      <p class="tagline">Designer · Engineer · Founder · Activist</p>
+    </header>
+
+    <section>
+      <p class="section-label">About</p>
+      <div class="bio-intro">
+        Stanford Rosenthal is a product designer and software engineer who has spent 17 years designing and building for the web, from a grassroots advocacy campaign he started as a teenager to products used by people trying to save money, find work, and make sense of their medical bills.
+      </div>
+      <div class="bio-body">
+        <p>At 15, after Hurricane Katrina, he co-founded <a href="https://levees.org" target="_blank">Levees.org</a> with his mother to correct the public story about why New Orleans flooded. That work is the subject of the award-winning book <em><a href="https://www.wordswhisperedinwater.com/" target="_blank">Words Whispered in Water</a></em>.</p>
+        <p>He left college to join a startup and has been an early team member at several more. As Head of Academics at Kenzie Academy, he built a UX design curriculum ranked #1 by Course Report and led a team of 45. He has worked remotely since 2016, and today builds his own products as a solo founder.</p>
+      </div>
+    </section>
+
+    <hr />
+
+    <section>
+      <p class="section-label">Topics</p>
+      <div class="entries">
+        <div class="entry">
+          <div class="entry-header"><span class="entry-name">Starting an advocacy organization at 15</span></div>
+          <p class="entry-desc">Co-founding Levees.org with my mom after Hurricane Katrina, and what it was like to become the subject of an award-winning book.</p>
+        </div>
+        <div class="entry">
+          <div class="entry-header"><span class="entry-name">Dropping out of college to join a startup</span></div>
+          <p class="entry-desc">Why I left school for an early-stage company, and how a deliberately non-linear career has played out since.</p>
+        </div>
+        <div class="entry">
+          <div class="entry-header"><span class="entry-name">Failing often</span></div>
+          <p class="entry-desc">Treating failure as a normal, frequent part of building things.</p>
+        </div>
+        <div class="entry">
+          <div class="entry-header"><span class="entry-name">Bail reform and criminal justice reform</span></div>
+          <p class="entry-desc">How people can support efforts to reform bail and the criminal justice system.</p>
+        </div>
+        <div class="entry">
+          <div class="entry-header"><span class="entry-name">Going solo, without VC</span></div>
+          <p class="entry-desc">Being a solo founder, and why I don&rsquo;t intend to accept venture capital funding.</p>
+        </div>
+        <div class="entry">
+          <div class="entry-header"><span class="entry-name">Agentic product development</span></div>
+          <p class="entry-desc">Building products with AI agents as part of the development process.</p>
+        </div>
+        <div class="entry">
+          <div class="entry-header"><span class="entry-name">Being both a software engineer and a designer</span></div>
+          <p class="entry-desc">Working across design and code, and what each discipline teaches the other.</p>
+        </div>
+        <div class="entry">
+          <div class="entry-header"><span class="entry-name">Lessons from running academics at a coding bootcamp</span></div>
+          <p class="entry-desc">What I learned as Head of Academics at Kenzie Academy, building curriculum and leading a team of 45.</p>
+        </div>
+        <div class="entry">
+          <div class="entry-header"><span class="entry-name">UX design</span></div>
+          <p class="entry-desc">The craft and practice of designing products people can actually use.</p>
+        </div>
+        <div class="entry">
+          <div class="entry-header"><span class="entry-name">Design for behavior change</span></div>
+          <p class="entry-desc">Leveraging UX design to motivate people to change their behavior.</p>
+        </div>
+        <div class="entry">
+          <div class="entry-header"><span class="entry-name">Remote work before it was cool</span></div>
+          <p class="entry-desc">Working remotely since 2016, long before it became the norm.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section>
+      <p class="section-label">Questions you could ask</p>
+      <ul class="question-list">
+        <li>What was it like to co-found an advocacy organization with your mom when you were 15?</li>
+        <li>Why did you leave college to join a startup, and would you do it again?</li>
+        <li>Why don&rsquo;t you intend to take VC funding as a solo founder?</li>
+        <li>How has agentic product development changed the way you build?</li>
+        <li>How can UX design be used to motivate behavioral change?</li>
+        <li>What did running academics at a coding bootcamp teach you about how people learn?</li>
+        <li>What have you learned from working remotely since 2016?</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section>
+      <p class="section-label">Previously on</p>
+      <div class="entries">
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-name"><a href="https://podcasts.apple.com/us/podcast/fight-back-however-you-can-stanford-rosenthal/id1572283279?i=1000647922616" target="_blank">Beat the Big Guys, Ep. 102: &ldquo;Fight Back However You Can&rdquo;</a></span>
+            <span class="entry-date">2024</span>
+          </div>
+          <p class="entry-desc">A conversation about working on Levees.org, the grassroots campaign to correct the public narrative about the 2005 levee failures in New Orleans, and how those lessons still shape the fights I take on today.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section>
+      <p class="section-label">Get in touch</p>
+      <p class="contact-note">If you think I&rsquo;d be a good fit for your show, send me a message on LinkedIn with a bit about your podcast, your audience, and the topic you have in mind.</p>
+      <a class="cta" href="https://www.linkedin.com/in/nolastan/" target="_blank">Message me on LinkedIn</a>
+    </section>
+
+    <footer>
+      © Stanford Rosenthal · <a href="/">Home</a>
+    </footer>
+
+  </div>
+</body>
+</html>
