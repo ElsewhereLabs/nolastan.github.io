@@ -146,7 +146,7 @@
 
     .books {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 36px 24px;
     }
 
@@ -203,29 +203,28 @@
       font-size: 0.8rem;
       color: var(--ink-light);
       line-height: 1.4;
-      margin-bottom: 10px;
     }
 
     .book-links {
       display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      margin-top: auto;
+      flex-wrap: nowrap;
+      gap: 10px;
+      font-size: 0.74rem;
+      margin-bottom: 8px;
     }
 
     .book-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      border: 1px solid var(--rule);
-      border-radius: 4px;
-      padding: 3px 5px;
+      color: var(--accent);
+      border-bottom: 1px solid rgba(200, 90, 42, 0.35);
+      white-space: nowrap;
     }
 
-    .book-links a:hover { color: var(--accent); border-color: var(--accent); }
+    .book-links a::after {
+      content: ' \2197';
+      font-size: 0.75em;
+    }
+
+    .book-links a:hover { color: var(--ink); border-color: var(--ink); }
 
     .gift-cards {
       display: grid;
@@ -426,7 +425,9 @@
     @media (max-width: 480px) {
       html { font-size: 16px; }
       .site { padding: 48px 0 80px; }
-      .books { grid-template-columns: repeat(2, 1fr); gap: 28px 18px; }
+      .books { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 18px; }
+      .book-links { gap: 9px; font-size: 0.7rem; }
+      .book-links a::after { content: none; }
       .gift-cards { grid-template-columns: 1fr; gap: 16px; }
       a.admired-item { grid-template-columns: 1fr; }
       .admired-photo { aspect-ratio: 4 / 3; }
@@ -485,116 +486,116 @@
         <div class="book">
           <div class="cover has-img"><img src="https://images-us.bookshop.org/ingram/9780553380958.jpg?width=600" alt="Cover of Snow Crash" loading="lazy" /></div>
           <div>
-            <p class="book-title">Snow Crash</p>
-            <p class="book-author">Neal Stephenson</p>
             <div class="book-links">
               <a href="https://www.penguinrandomhouse.com/books/172832/snow-crash-by-neal-stephenson/" target="_blank">Publisher</a>
               <a href="https://bookshop.org/p/books/snow-crash-neal-stephenson/f125b5678acae70d?ean=9780553380958" target="_blank">Bookshop</a>
               <a href="https://www.amazon.com/dp/0553380958" target="_blank">Amazon</a>
             </div>
+            <p class="book-title">Snow Crash</p>
+            <p class="book-author">Neal Stephenson</p>
           </div>
         </div>
 
         <div class="book">
-          <div class="cover has-img"><img src="https://images-us.bookshop.org/ingram/9780060512804.jpg?width=600" alt="Cover of Cryptonomicon" loading="lazy" /></div>
+          <div class="cover has-img"><img src="https://images-us.bookshop.org/ingram/9780553380965.jpg?width=600" alt="Cover of The Diamond Age" loading="lazy" /></div>
           <div>
-            <p class="book-title">Cryptonomicon</p>
-            <p class="book-author">Neal Stephenson</p>
             <div class="book-links">
-              <a href="https://www.harpercollins.com/products/cryptonomicon-neal-stephenson" target="_blank">Publisher</a>
-              <a href="https://bookshop.org/p/books/cryptonomicon-neal-stephenson/08d3bfe386892c1f?ean=9780060512804" target="_blank">Bookshop</a>
-              <a href="https://www.amazon.com/dp/0060512806" target="_blank">Amazon</a>
+              <a href="https://www.penguinrandomhouse.com/books/172835/the-diamond-age-by-neal-stephenson/" target="_blank">Publisher</a>
+              <a href="https://bookshop.org/p/books/the-diamond-age-or-a-young-lady-s-illustrated-primer-neal-stephenson/65548cf86c9da492?ean=9780553380965" target="_blank">Bookshop</a>
+              <a href="https://www.amazon.com/dp/0553380966" target="_blank">Amazon</a>
             </div>
+            <p class="book-title">The Diamond Age</p>
+            <p class="book-author">Neal Stephenson</p>
           </div>
         </div>
 
         <div class="book">
           <div class="cover has-img"><img src="/images/wishlist/analog-cover.jpg" alt="Cover of Analog" loading="lazy" /></div>
           <div>
-            <p class="book-title">Analog</p>
-            <p class="book-author">Chris Schultz</p>
             <div class="book-links">
               <a href="https://analog.life/book" target="_blank">Book site</a>
               <a href="https://a.co/d/02mvfbDd" target="_blank">Amazon</a>
             </div>
+            <p class="book-title">Analog</p>
+            <p class="book-author">Chris Schultz</p>
           </div>
         </div>
 
         <div class="book">
           <div class="cover has-img"><img src="https://secure-ecsd.elsevier.com/covers/80/Tango2/largest/9780128035207.jpg" alt="Cover of The Craft and Science of Coffee" loading="lazy" /></div>
           <div>
-            <p class="book-title">The Craft and Science of Coffee</p>
-            <p class="book-author">Edited by Britta Folmer</p>
             <div class="book-links">
               <a href="https://shop.elsevier.com/books/the-craft-and-science-of-coffee/folmer/978-0-12-803520-7" target="_blank">Publisher</a>
               <a href="https://bookshop.org/p/books/the-craft-and-science-of-coffee-britta-folmer/0f890bf07f32c0a1?ean=9780128035207" target="_blank">Bookshop</a>
               <a href="https://www.amazon.com/dp/012803520X" target="_blank">Amazon</a>
             </div>
+            <p class="book-title">The Craft and Science of Coffee</p>
+            <p class="book-author">Edited by Britta Folmer</p>
           </div>
         </div>
 
         <div class="book">
           <div class="cover has-img"><img src="https://benbellabooks.com/wp-content/uploads/2025/10/start-in-your-own-backyard.jpg" alt="Cover of Start in Your Own Backyard" loading="lazy" /></div>
           <div>
-            <p class="book-title">Start in Your Own Backyard</p>
-            <p class="book-author">Steve Nygren</p>
             <div class="book-links">
               <a href="https://benbellabooks.com/shop/start-in-your-own-backyard/" target="_blank">Publisher</a>
               <a href="https://bookshop.org/p/books/start-in-your-own-backyard-transforming-where-we-live-with-radical-common-sense-steve-nygren/176c9c9e9ebf75b6?ean=9781637747438" target="_blank">Bookshop</a>
               <a href="https://www.amazon.com/dp/1637747438" target="_blank">Amazon</a>
             </div>
+            <p class="book-title">Start in Your Own Backyard</p>
+            <p class="book-author">Steve Nygren</p>
           </div>
         </div>
 
         <div class="book">
           <div class="cover has-img"><img src="https://images-us.bookshop.org/ingram/9780316334716.jpg?width=600" alt="Cover of Nemesis Games" loading="lazy" /></div>
           <div>
-            <p class="book-title">Nemesis Games <span class="book-series">(The Expanse, Book 5)</span></p>
-            <p class="book-author">James S. A. Corey</p>
             <div class="book-links">
               <a href="https://www.hachettebookgroup.com/titles/james-s-a-corey/nemesis-games/9780316334716/" target="_blank">Publisher</a>
               <a href="https://bookshop.org/p/books/nemesis-games-james-s-a-corey/c3f6ee970f893e8f?ean=9780316334716" target="_blank">Bookshop</a>
               <a href="https://www.amazon.com/dp/0316334715" target="_blank">Amazon</a>
             </div>
+            <p class="book-title">Nemesis Games <span class="book-series">(The Expanse, Book 5)</span></p>
+            <p class="book-author">James S. A. Corey</p>
           </div>
         </div>
 
         <div class="book">
           <div class="cover has-img"><img src="https://images-us.bookshop.org/ingram/9781771642743.jpg?width=600" alt="Cover of The Vegetarian's Guide to Eating Meat" loading="lazy" /></div>
           <div>
-            <p class="book-title">The Vegetarian&rsquo;s Guide to Eating Meat</p>
-            <p class="book-author">Marissa Landrigan</p>
             <div class="book-links">
               <a href="https://greystonebooks.com/products/the-vegetarians-guide-to-eating-meat" target="_blank">Publisher</a>
               <a href="https://bookshop.org/p/books/the-vegetarian-s-guide-to-eating-meat-a-young-woman-s-search-for-ethical-food-marissa-landrigan/f9db024d3f7bfc84" target="_blank">Bookshop</a>
               <a href="https://www.amazon.com/dp/1771642742" target="_blank">Amazon</a>
             </div>
+            <p class="book-title">The Vegetarian&rsquo;s Guide to Eating Meat</p>
+            <p class="book-author">Marissa Landrigan</p>
           </div>
         </div>
 
         <div class="book">
           <div class="cover has-img"><img src="https://images-us.bookshop.org/ingram/9781933820668.jpg?width=600" alt="Cover of Writing Is Designing" loading="lazy" /></div>
           <div>
-            <p class="book-title">Writing Is Designing</p>
-            <p class="book-author">Michael J. Metts and Andy Welfle</p>
             <div class="book-links">
               <a href="https://rosenfeldmedia.com/books/writing-is-designing/" target="_blank">Publisher</a>
               <a href="https://bookshop.org/p/books/writing-is-designing-words-and-the-user-experience-andy-welfle/78df4057012288d5?ean=9781933820668" target="_blank">Bookshop</a>
               <a href="https://www.amazon.com/dp/1933820667" target="_blank">Amazon</a>
             </div>
+            <p class="book-title">Writing Is Designing</p>
+            <p class="book-author">Michael J. Metts and Andy Welfle</p>
           </div>
         </div>
 
         <div class="book">
           <div class="cover has-img"><img src="https://images-us.bookshop.org/ingram/9781786789792.jpg?width=600" alt="Cover of The Joyful Environmentalist" loading="lazy" /></div>
           <div>
-            <p class="book-title">The Joyful Environmentalist</p>
-            <p class="book-author">Isabel Losada</p>
             <div class="book-links">
               <a href="https://penguinrandomhouse.com/books/782933/the-joyful-environmentalist-revised-and-updated-2nd-edition--with-new-material-by-isabel-losada" target="_blank">Publisher</a>
               <a href="https://bookshop.org/p/books/the-joyful-environmentalist-revised-and-updated-2nd-edition-with-new-material-how-to-practise-without-preaching-isabel-losada/9afab6ffb9cd16a5?ean=9781786789792" target="_blank">Bookshop</a>
               <a href="https://www.amazon.com/dp/1786789795" target="_blank">Amazon</a>
             </div>
+            <p class="book-title">The Joyful Environmentalist</p>
+            <p class="book-author">Isabel Losada</p>
           </div>
         </div>
 
