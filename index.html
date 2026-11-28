@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#161614" media="(prefers-color-scheme: dark)" />
   <title>Stanford Rosenthal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +20,23 @@
       --accent: #c85a2a;
       --rule: #dddbd4;
       --max: 640px;
+      --surface: #fff;
+      --sunken: #ebe8e0;
+      --sunken-soft: #efede7;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #ecebe5;
+        --ink-light: #b5b4aa;
+        --ink-faint: #85847b;
+        --paper: #161614;
+        --accent: #e27b4b;
+        --rule: #34332e;
+        --surface: #1e1e1b;
+        --sunken: #262622;
+        --sunken-soft: #23231f;
+      }
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -217,7 +237,7 @@
       border-radius: 6px;
       overflow: hidden;
       line-height: 0;
-      background: #fff;
+      background: var(--surface);
       transition: border-color 0.15s;
     }
 
@@ -258,7 +278,7 @@
       font-family: 'DM Mono', monospace;
       font-size: 0.72rem;
       font-weight: 300;
-      color: var(--paper);
+      color: #f7f5f0;
       text-align: center;
       line-height: 1.6;
       padding: 12px 8px 0;
